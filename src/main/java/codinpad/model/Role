@@ -1,0 +1,6 @@
+package codinpad.model;
+
+public enum Role {
+    USER,
+    ADMIN
+}

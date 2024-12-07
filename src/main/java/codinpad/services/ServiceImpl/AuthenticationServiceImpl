@@ -1,0 +1,32 @@
+package codinpad.services.ServiceImpl;
+
+public class AuthenticationServiceImpl implements AuthenticationService
+{
+
+    private final UserRepository userRepository;
+
+    private final PasswordEncoder passwordEncoder;
+
+    public AuthenticationServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder)
+    {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    public User signup(SignupRequest request)
+    {
+      User user = new User();
+      user.setEmail(request.getEmail());
+      user.setFirstName(request.getFirstName());
+      user.setLastName(request.getLastName());
+      user.setPassword(request.getEmail());
+      user.setRole(Role.USER);
+
+      return userRepository.save(user);
+    }
+
+    public string SignIn(SigninRequest)
+    {
+        
+    }
+}

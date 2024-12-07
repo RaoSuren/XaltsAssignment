@@ -1,0 +1,6 @@
+package codinpad.services;
+
+public interface AuthenticationService
+{
+   User signup(SignupRequest request);
+}
